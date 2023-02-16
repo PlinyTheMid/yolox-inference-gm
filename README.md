@@ -1,7 +1,7 @@
 # yolox-inference-gm
 
-<div align="center"><img src="assets/logo.png" width="350"></div>
-<img src="assets/demo.png" >
+<div align="center"><img src="YOLOX/assets/logo.png" width="350"></div>
+<img src="YOLOX/assets/demo.png" >
 
 ## Introduction
 YOLOX is an anchor-free version of YOLO, with a simpler design but better performance! It aims to bridge the gap between research and industrial communities.
@@ -9,7 +9,7 @@ For more details, please refer to our [report on Arxiv](https://arxiv.org/abs/21
 
 This repo is an implementation of PyTorch version YOLOX, there is also a [MegEngine implementation](https://github.com/MegEngine/YOLOX).
 
-<img src="assets/git_fig.png" width="1000" >
+<img src="YOLOX/assets/git_fig.png" width="1000" >
 
 ## Benchmark
 
@@ -235,7 +235,7 @@ Without the guidance of [Dr. Sun Jian](http://www.jiansun.org/), YOLOX would not
 The passing away of Dr. Sun Jian is a great loss to the Computer Vision field. We have added this section here to express our remembrance and condolences to our captain Dr. Sun.
 It is hoped that every AI practitioner in the world will stick to the concept of "continuous innovation to expand cognitive boundaries, and extraordinary technology to achieve product value" and move forward all the way.
 
-<div align="center"><img src="assets/sunjian.png" width="200"></div>
+<div align="center"><img src="YOLOX//assets/sunjian.png" width="200"></div>
 没有孙剑博士的指导，YOLOX也不会问世并开源给社区使用。
 孙剑博士的离去是CV领域的一大损失，我们在此特别添加了这个部分来表达对我们的“船长”孙老师的纪念和哀思。
 希望世界上的每个AI从业者秉持着“持续创新拓展认知边界，非凡科技成就产品价值”的观念，一路向前。
