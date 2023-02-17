@@ -130,7 +130,8 @@ class Predictor(object):
             model_trt = TRTModule()
             model_trt.load_state_dict(torch.load(trt_file))
 
-            x = torch.ones(1, 3, exp.test_size[0], exp.test_size[1]).cuda()
+            #x = torch.ones(1, 3, exp.test_size[0], exp.test_size[1]).cuda()
+            x = torch.ones(1, 3, exp.test_size[0], exp.test_size[1])
             self.model(x)
             self.model = model_trt
 
