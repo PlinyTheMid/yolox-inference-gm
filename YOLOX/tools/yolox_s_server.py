@@ -6,6 +6,10 @@ from loguru import logger
 import numpy as np
 import cv2
 import torch
+#torch._C._cuda_getDriverVersion()
+#torch.cuda._lazy_init()
+#torch.cuda._initialized = True
+#torch.cuda.current_device()
 import json
 
 from yolox.data.data_augment import ValTransform
@@ -154,7 +158,7 @@ class Predictor(object):
         img, _ = self.preproc(img, None, self.test_size)
         img = torch.from_numpy(img).unsqueeze(0)
         img = img.float()
-        if self.device == "gpu":
+        if self.device == "cpu":
             img = img.cuda()
             if self.fp16:
                 img = img.half()  # to FP16
@@ -234,7 +238,7 @@ def imageflow_demo(predictor, vis_folder, current_time, args):
     while True:
         ret_val, frame = cap.read()
         if ret_val:
-            outputs, img_info = predictor.inference(frame) 
+            outputs, img_info = predictor.inference(frame)
             result_frame = predictor.visual(outputs[0], img_info, predictor.confthre)
             if args.save_result:
                 vid_writer.write(result_frame)
@@ -277,7 +281,7 @@ def main(args):
     model = exp.get_model()
     logger.info("Model Summary: {}".format(get_model_info(model, exp.test_size)))
 
-    if args.device == "gpu":
+    if args.device == "cpu":
         model.cuda()
         if args.fp16:
             model.half()  # to FP16
@@ -389,3 +393,4 @@ if __name__ == "__main__":
 
     app.run(host = '0.0.0.0', port = os.getenv('PORT'))
 #    app.run(port = 5002)
+This paste expires in <1 hour. Public IP access. Share whatever you see with others in seconds with Context.Terms of ServiceReport this
